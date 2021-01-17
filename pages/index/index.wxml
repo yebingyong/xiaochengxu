@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto2"  bindtap="gotoTest">
+    <button  > 跳转页面 </button>
+  </view>
+  <view class="usermotto2"  >
+    <button bindtap="tapLogin" > 登录 </button>
+  </view>
+  <view class="usermotto2"  bindtap="goMap">
+    <button  > 地图 </button>
+  </view>
+
+  <button bindtap="goScan" > 扫码 </button>
+  <button bindtap="goPicture" > 拍照 </button>
+  <button bindtap="uploadPicture" > 图片上传 </button>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取电话号码</button>
+  
+    <button   open-type="share"> 分享 </button>
+    <button bindtap="onShareTimeline"  open-type="share"> 分享朋友圈 </button>
+ 
+
+  
+  <button bindtap="goPhone" > 打电话 </button>
+  <input class="weui-input" type="number"  maxlength="10"  placeholder="输入同步到view中"/>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
